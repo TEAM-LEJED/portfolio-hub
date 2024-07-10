@@ -5,6 +5,7 @@ import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
 import Preview from './pages/preview'
 import Home from './pages/dashBoard/home'
+import DashboardLayout from './pages/dashBoard/DashboardLayout'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -23,11 +24,29 @@ const App = () => {
 },
 {
   path : "dashboard",
-  element:<Home/>
+  element:<DashboardLayout/>,
+  children: [
+{
+  index: true,
+  element: <About/>
+}
+  ]
 },
 {
-  path : "preview",
-  element:<Preview/>
+  path : "resume",
+  element:<resume/>
+},
+{
+  path : "skills",
+  element:<skills/>
+},
+{
+  path : "project",
+  element:<project/>
+},
+{
+  path : "experience",
+  element:<experience/>
 },
 
     ]
