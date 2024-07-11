@@ -3,9 +3,12 @@ import LandingPage from './pages/landingPage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
-import Preview from './pages/preview'
-import Home from './pages/dashBoard/home'
-import DashboardLayout from './pages/dashBoard/DashboardLayout'
+import Resume from './pages/dashBoard/pages/resume'
+import Experience from './pages/dashBoard/pages/experience'
+import Projects from './pages/dashBoard/pages/projects'
+import Overview from './pages/dashBoard/pages/overview'
+import DashBoardLayout from './pages/dashBoard/layout'
+import Skills from './pages/dashBoard/pages/Skills'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -24,37 +27,36 @@ const App = () => {
 },
 {
   path : "dashboard",
-  element:<DashboardLayout/>,
+  element:<DashBoardLayout/>,
   children: [
 {
   index: true,
-  element: <About/>
-}
-  ]
+  element:<Overview/>
 },
 {
   path : "resume",
-  element:<resume/>
+  element:<Resume/>
 },
 {
   path : "skills",
-  element:<skills/>
+  element:<Skills/>
 },
 {
   path : "project",
-  element:<project/>
+  element:<Projects/>
 },
 {
   path : "experience",
-  element:<experience/>
+  element:<Experience/>
+},
+{
+  path: "overview",
+  element: <Overview/>
+}
+  ]
 },
 
-    ]
-    
-
-
-  
-  )
+ ])
   return <RouterProvider router={router}/>
 }
 

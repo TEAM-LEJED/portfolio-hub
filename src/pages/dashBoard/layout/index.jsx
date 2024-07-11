@@ -1,9 +1,15 @@
-import React from 'react'
+// import Sidebar from '../../../components/sidebar'
+// import { Outlet } from 'react-router-dom'
 
-const DashboardLayout = () => {
-  return (
-    <div>DashboardLayout</div>
-  )
-}
+// const DashBoardLayout = () => {
+//   return (
+//     <div className='flex'>
+//         <Sidebar/>
+//        <div className='bg-zinc-50 w-full'>
+//        <Outlet/>
+//        </div>
+//     </div>
+//   )
+// }
 
-export default index
+// export default DashBoardLayout;
