@@ -14,7 +14,8 @@ const Sidebar = () => {
         to={link}
         key={index} 
         className="flex gap-x-4 items-center hover:bg-white ">
-        
+          <span>{icon}</span>
+        {text}
         </Link>
        ))
 
