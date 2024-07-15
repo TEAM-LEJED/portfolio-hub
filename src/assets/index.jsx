@@ -5,4 +5,5 @@ import linkedIcon from "../assets/images/linkedin.png"
 import iconCircle from "../assets/images/iconsCircle.png"
 
 
-export {SignUp,fieldImage, googleIcon, linkedIcon, iconCircle}
+
+export {SignUp,fieldImage, googleIcon, linkedIcon ,iconCircle}
