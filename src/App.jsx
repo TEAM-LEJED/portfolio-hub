@@ -3,9 +3,9 @@ import LandingPage from './pages/landingPage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
-import Preview from './pages/preview'
 import Home from './pages/dashBoard/home'
-import Navbar from './components/navbar'
+import PreviewPage from './pages/preview'
+// import Navbar from './components/navbar'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -14,10 +14,10 @@ const App = () => {
   path:"/",
   element: <LandingPage/>
 },
-{
-  path : "navbar",
-  element:<Navbar/>
-},
+// {
+//   path : "navbar",
+//   element:<Navbar/>
+// },
 {
   path : "signup",
   element:<SignupPage/>
@@ -32,8 +32,13 @@ const App = () => {
 },
 {
   path : "preview",
-  element:<Preview/>
+  element:<PreviewPage/>
 },
+
+
+
+
+
 
     ]
     
