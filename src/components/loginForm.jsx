@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Lock, User } from 'lucide-react';
 
 import { useForm } from 'react-hook-form';
 import { apiLogin } from '../services/auth';
+import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
+const [isSubmitting,setIsSubmitting]=useState(false);
+const navigate = useNavigate();
+
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = async (data) => {
     console.log(data);
-
+    setIsSubmitting(true)
+    
     try {
       const res= await apiLogin({
         userName:data.username,
@@ -17,10 +22,14 @@ const LoginForm = () => {
       })
 
       console.log("Response: ",res.data)
-      
+      //redirect to dashboard
+      navigate("/dashboard");
     } catch (error) {
       console.log(error)
       
+    }
+    finally{
+      setIsSubmitting(false)
     }
   };
   return (
@@ -53,6 +62,7 @@ const LoginForm = () => {
         type="submit"
         className="button rounded-full w-40 h-10 bg-[#3D5A5E] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
       >
+        {/* {isSubmitting ? 'Logging in...' : 'Login'} */}
         <span>Log In</span>
       </button>
     </form>
