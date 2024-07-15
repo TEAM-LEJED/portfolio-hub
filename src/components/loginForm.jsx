@@ -12,11 +12,11 @@ const LoginForm = () => {
 
     try {
       const res= await apiLogin({
-        email:data.email,
+        userName:data.username,
         password: data.password
       })
 
-      console.log("Response: ",res)
+      console.log("Response: ",res.data)
       
     } catch (error) {
       console.log(error)
