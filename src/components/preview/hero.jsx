@@ -33,7 +33,7 @@ const Hero = () => {
         </Link>
       </div>
         <div className='shadow-white shadow-2xl bg-[#12071F] rounded-full  bg-opacity-50'>
-        <img src={LynImg} alt="" srcset="" />
+        <img src={LynImg} alt=""  />
         </div>
         
       </div>
