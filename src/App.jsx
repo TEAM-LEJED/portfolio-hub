@@ -16,10 +16,10 @@ const App = () => {
   path:"/",
   element: <LandingPage/>
 },
-// {
-//   path : "navbar",
-//   element:<Navbar/>
-// },
+{
+  path : "navbar",
+  element:<Navbar/>
+},
 {
   path : "signup",
   element:<SignupPage/>
@@ -35,6 +35,46 @@ const App = () => {
 {
   path : "preview",
   element:<PreviewPage/>
+},
+{
+  path : "home",
+  element:<Hero/>
+},
+{
+  path : "about",
+  element:<About/>
+},
+{
+  path : "achievements",
+  element:<Achievements/>
+},
+{
+  path : "contacts",
+  element:<Contacts/>
+},
+{
+  path : "education",
+  element:<Education/>
+},
+{
+  path : "experience",
+  element:<Experience/>
+},
+{
+  path : "projects",
+  element:<Projects/>
+},
+{
+  path : "resume",
+  element:<Resume/>
+},
+{
+  path : "skills",
+  element:<Skills/>
+},
+{
+  path : "voluteering",
+  element:<Voluteering/>
 },
 
 
