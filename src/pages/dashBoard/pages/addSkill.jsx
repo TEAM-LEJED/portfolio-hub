@@ -1,8 +1,11 @@
 import React from 'react'
+import Skills from './skills'
 
 const AddSkill = () => {
   return (
-    <div>AddSkill</div>
+    <div>
+      <Skills/>
+    </div>
   )
 }
 
