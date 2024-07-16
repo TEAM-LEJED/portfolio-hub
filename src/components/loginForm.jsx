@@ -23,8 +23,9 @@ const LoginForm = () => {
      
       <button
         type="submit"
-        className="button rounded-full w-40 h-10 bg-[#3D5A5E] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
+        className="button rounded-full w-40 h-10 bg-[#12071F] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
       >
+        
         <span>Log In</span>
       </button>
     </form>

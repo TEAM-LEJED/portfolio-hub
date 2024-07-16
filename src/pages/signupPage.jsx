@@ -9,7 +9,7 @@ const SignupPage = () => {
     <PageTransition>
 
        <div className="flex items-center justify-center min-h-screen">
-      <div className="bg-black w-[65rem] h-[35rem] p-8 rounded-lg shadow-lg text-center">
+      <div className="bg-[#12071F] w-[65rem] h-[35rem] p-8 rounded-lg shadow-lg text-center">
         <div className="flex flex-row  h-full ">
           <div className="w-1/2">
             <img src={SignUp} alt="SignUp" className="w-full h-full object-cover" />
