@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Lock, User } from 'lucide-react';
-
+import { ColorRing } from 'react-loader-spinner';
 import { useForm } from 'react-hook-form';
 import { apiLogin } from '../services/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const LoginForm = () => {
 const [isSubmitting,setIsSubmitting]=useState(false);
@@ -22,10 +23,15 @@ const navigate = useNavigate();
       })
 
       console.log("Response: ",res.data)
+      toast.success(res.data)
       //redirect to dashboard
-      navigate("/dashboard");
+      setTimeout(() => {
+        navigate('/dashboard');
+      },5000);
+
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      toast.error(error);
       
     }
     finally{
@@ -62,12 +68,16 @@ const navigate = useNavigate();
         type="submit"
         className="button rounded-full w-40 h-10 bg-[#12071F] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
       >
-<<<<<<< HEAD
         
-=======
-        {/* {isSubmitting ? 'Logging in...' : 'Login'} */}
->>>>>>> 9098e987a44dd3c77d3ca1f81ea8b9c6e56e4d5f
-        <span>Log In</span>
+        {isSubmitting ? <ColorRing
+  visible={true}
+  height="50"
+  width="50"
+  ariaLabel="color-ring-loading"
+  wrapperStyle={{}}
+  wrapperClass="color-ring-wrapper"
+  colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+  /> : 'Login'}
       </button>
     </form>
   );
