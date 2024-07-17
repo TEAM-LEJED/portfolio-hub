@@ -86,19 +86,11 @@ const App = () => {
   path: "experiences/add-experience",
   element: <AddExperience/>
   },
-  
-   path : "preview",
-  element:<PreviewPage/>
-},
-
-
-
 
 
     ]
 
- 
-    
+},
 
 {
   path: "achievement",
@@ -124,11 +116,12 @@ const App = () => {
   path: "volunteering/add-voluteering",
   element: <AddVoluteering/>
 },
-  ]
-},
+  
 
- ])
+  ])
   return <RouterProvider router={router}/>
+
+
 }
 
 export default App
