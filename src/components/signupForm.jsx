@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { apiCheckUsernameExists, apiSignup } from '../services/auth';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Loader from './preview/loader';
+import { debounce } from 'lodash';
 
 const SignupForm = () => {
   const navigate = useNavigate()
@@ -11,35 +13,48 @@ const SignupForm = () => {
   const [usernameAvailable, setUsernameAvailable] = useState(false);
   const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [isUsernameLoading, setIsUsernameLoading] = useState(false);
 
   const checkUserName = async (userName) => {
+    setIsUsernameLoading(true);
     try {
       const res = await apiCheckUsernameExists(userName)
       console.log(res.data);
-      const user = res.data.user
+      const user = await res.data.user
       if (user) {
         setUsernameNotAvailable(true)
+        setUsernameAvailable(false)
       } else {
         setUsernameAvailable(true)
+        setUsernameNotAvailable(false)
       }
     } catch (error) {
       console.log(error);
+      toast.error("An error occurred. Please try again.!");
 
     };
   }
 
   const userNameWatch = watch('userName')
-  console.log(userNameWatch)
+  
 
   useEffect(() => {
-    if (userNameWatch) {
-      checkUserName(userNameWatch);
-    }
+    const debouncedSearch = debounce( async()=> {
+      if (userNameWatch) {
+       await checkUserName(userNameWatch);
+      }
+    }, 1000);
+    debouncedSearch();
+    return () => debouncedSearch.cancel();
 
-  }, [userNameWatch])
+  }, [userNameWatch]);
+    
+
+
+  
 
   const onSubmit = async (data) => {
-    console.log(data);
+   
     setIsSubmitting(true);
     let payload = {
       firstName: data.firstName,
@@ -47,15 +62,15 @@ const SignupForm = () => {
       userName: data.userName,
       email: data.email,
       password: data.password,
-      confirmedPassword: data.confirmedPassword
-    };
+      confirmPassword: data.confirmPassword
+    }
     if (data.otherNames) {
       payload = { ...payload, otherNames: data.otherNames };
     }
 
     try {
       const res = await apiSignup(payload);
-      console.log(res.data);
+      
       toast.success(res.data);
       setTimeout(() => {
         navigate('/login');
@@ -63,7 +78,7 @@ const SignupForm = () => {
 
 
     } catch (error) {
-      toast.error(error.message);
+      toast.error("An error occurred. Please try again.!");
       console.log(error);
     } finally {
       setIsSubmitting(false);
@@ -111,6 +126,8 @@ const SignupForm = () => {
         {errors.userName && (
           <p className="text-red-500">{errors.userName.message}</p>
         )}
+       <div className='flex items-center gap-x-2'>
+        {isUsernameLoading && <Loader/>}
         {
           usernameAvailable && <p className='text-green-500'>Username available!</p>
         }
@@ -118,6 +135,7 @@ const SignupForm = () => {
           usernameNotAvailable && <p className='text-red-500'>Username not available!</p>
         }
 
+       </div>
       </div>
       <div className="relative mb-4">
         <Lock className="absolute text-[#FCC73F]" />
@@ -152,7 +170,7 @@ const SignupForm = () => {
           type="password"
           className="border-b-2 border-[#FCC73F] bg-transparent px-4 w-3/4 transition duration-200"
           placeholder="confirm password"
-          {...register("confirmedPassword", { required: "password doesn't match" })}
+          {...register("confirmPassword", { required: "password doesn't match" })}
         />
         {errors.password && (
           <p className="text-red-500">{errors.password.message}</p>
@@ -162,7 +180,7 @@ const SignupForm = () => {
         type="submit"
         className="button rounded-full w-40 h-10 bg-[#12071F] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
       >
-        {isSubmitting ? "loading..." : <span>Sign Up</span>}
+        {isSubmitting ? <Loader/> : <span>Sign Up</span>}
       </button>
     </form>
   );
