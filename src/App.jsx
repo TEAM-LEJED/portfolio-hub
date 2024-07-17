@@ -16,7 +16,7 @@ const App = () => {
 },
 // {
 //   path : "navbar",
-//   element:<Navbar/>
+//   element:<Na/>
 // },
 {
   path : "signup",
@@ -34,7 +34,6 @@ const App = () => {
   path : "preview",
   element:<PreviewPage/>
 },
-
 
 
 

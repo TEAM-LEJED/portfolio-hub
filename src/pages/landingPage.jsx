@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
     <div>
-      {/* {/* <Navbar /> */}
+      {/* <Navbar /> */}
       
         <div className="container">
           <h1>Welcome to LEJED PORTFOLIO</h1>
