@@ -1,5 +1,5 @@
 import { apiClient } from "./config"
 
-export const apiGetProjects = async(payload)=>{
-    return apiClient.get("/projects",payload)
+export const apiGetProjects = async()=>{
+    return apiClient.get("/projects")
 }

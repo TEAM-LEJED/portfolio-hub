@@ -19,7 +19,6 @@ const PreviewPage = () => {
         <Achievements/>
         <Contacts/>
         <Education/>
-        <Experience/>
         <Projects/>
         <Resume/>
         <Skills/>

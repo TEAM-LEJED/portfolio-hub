@@ -1,3 +1,3 @@
-export const apiGetExperiences = async(payload)=>{
-    return apiClient.get("/experiences",payload);
+export const apiGetExperiences = async()=>{
+    return apiClient.get("/experiences");
 }
