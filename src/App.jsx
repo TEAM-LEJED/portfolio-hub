@@ -31,10 +31,10 @@ const App = () => {
   path:"/",
   element: <LandingPage/>
 },
-// {
-//   path : "navbar",
-//   element:<Na/>
-// },
+{
+  path : "preview",
+  element:<PreviewPage/>
+},
 {
   path : "signup",
   element:<SignupPage/>
