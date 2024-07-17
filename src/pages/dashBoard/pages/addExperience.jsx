@@ -1,8 +1,11 @@
 import React from 'react'
+import ExperienceForm from './allForms/experienceForm'
 
 const AddExperience = () => {
   return (
-    <div>AddExperience</div>
+    <div className='bg-white'> 
+      <ExperienceForm/>
+    </div>
   )
 }
 

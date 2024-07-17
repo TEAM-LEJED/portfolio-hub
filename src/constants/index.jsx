@@ -7,6 +7,7 @@ import{
    BriefcaseBusiness, 
    HeartHandshake, 
    UserSearch,
+   LogOutIcon,
   } from "lucide-react";
 export const K = {
   NAVLINKS: [
@@ -22,8 +23,8 @@ export const K = {
     },
     {
       icon:<Newspaper/>,
-      text: "Resume",
-      link: "/dashboard/resume"
+      text: "Profile",
+      link: "/dashboard/profile"
     },
     {
       icon:<BriefcaseBusiness/>,
@@ -52,6 +53,12 @@ export const K = {
       icon:<HeartHandshake/>,
       text: "Volunteering",
       link: "/dashboard/volunteering"
+    },
+
+    {
+      icon:<LogOutIcon/>,
+      text: "LogOut",
+      link: "/login"
     },
     
   ],
@@ -83,7 +90,7 @@ export const K = {
       levelOfProficiency: "Intermediate",
     },
     {
-      name: "JavaScript",
+      name: "HTML",
       levelOfProficiency: "Advanced",
     },
     {
@@ -98,6 +105,19 @@ export const K = {
       name: "React Native",
       levelOfProficiency: "Beginner",
     },
+    {
+      name: "Python",
+      levelOfProficiency: "Beginner",
+    },
+    {
+      name: "C#",
+      levelOfProficiency: "Beginner",
+    },
+    {
+      name: "GO",
+      levelOfProficiency: "Beginner",
+    },
+
 
   ]
 

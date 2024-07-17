@@ -6,7 +6,7 @@ import PagesLayout from '../layout/pagesLayout'
 const Projects = () => {
 const navigate = useNavigate();
   return (
-<PagesLayout headerText="Projects" buttonText="Add New Projects"
+<PagesLayout headerText="Projects" buttonText="Add New "
 onClick={() => navigate("/dashboard/projects/add-project")}>
   <span>Projects list Here</span>
 </PagesLayout>

@@ -1,11 +1,14 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import PagesLayout from '../layout/pagesLayout'
 
+
 const Achievement = () => {
+const navigate = useNavigate();
   return (
-    <PagesLayout headerText="Achievements" buttonText="Add New Achievement">
-        <span>Achievement List Here </span>
-    </PagesLayout>
+<PagesLayout headerText="Achievements" buttonText="Add New "
+onClick={() => navigate("/dashboard/achievement/add-achievement")}>
+  <span>Projects list Here</span>
+</PagesLayout>
   )
 }
 
