@@ -6,25 +6,30 @@ import { Edit, Trash2Icon } from 'lucide-react'
 const Skills = () => {
   const navigate = useNavigate()
   return (
-    <PagesLayout headerText="Skills" buttonText="Add new Skills" onClick={() => navigate("/dashboard/skills/add-skill")}>
-      <div className='grid grid-cols-4 gap-6'>
-        {K.SKILLS.map(({name, levelOfProfeciency}, index) =>(
-          <div key={index}>
-            <span>{name}</span>
-             <span>{levelOfProfeciency}</span>
-          </div>
-        ))}
-      </div>
-      <div className='ml-auto flex gap-x-2'>
-        <span>
-          <Trash2Icon className='text-red-500'/>
-        </span>
-        <span>
-          <Edit className='text-blue-500'/>
-        </span>
-      </div>
+    <div>
+    <PagesLayout headerText="Skills" buttonText="Add New" 
+    onClick={() => navigate("/dashboard/skills/add-skill")}>
+     
     </PagesLayout>
-    
+    <div className='grid grid-cols-4 gap-6'>
+  {K.SKILLS.map(({ name, levelOfProfeciency }, index) => (
+    <div key={index} className='p-4 border rounded-md shadow-md bg-white'>
+      <span>{name}</span>
+      <span>{levelOfProfeciency}</span>
+      
+      <div className='flex mt-2'>
+        <span className='cursor-pointer'>
+          <Trash2Icon className='text-red-500 hover:text-red-700'/>
+        </span>
+        <span className='ml-2 cursor-pointer'>
+          <Edit className='text-blue-500 hover:text-blue-700'/>
+        </span>
+      </div>
+    </div>
+  ))}
+</div>
+
+      </div>
 
     
   )

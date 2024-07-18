@@ -3,10 +3,9 @@ import LandingPage from './pages/landingPage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
-import Resume from './pages/dashBoard/pages/resume'
 import Projects from './pages/dashBoard/pages/projects'
 import DashBoardLayout from './pages/dashBoard/layout'
-import Skills from './pages/dashBoard/pages/skills'
+import Skills from './pages/dashBoard/pages/Skills'
 import Achievement from './pages/dashBoard/pages/achievement'
 import Education from './pages/dashBoard/pages/education'
 import Volunteering from './pages/dashBoard/pages/volunteering'
@@ -14,8 +13,12 @@ import Overview from './pages/dashBoard/pages/overview'
 import AddProject from './pages/dashBoard/pages/addProject'
 import AddExperience from './pages/dashBoard/pages/addExperience'
 import AddSkill from './pages/dashBoard/pages/addSkill'
-import AddResume from './pages/dashBoard/pages/addResume'
 import Experiences from './pages/dashBoard/pages/experiences'
+import AddAchievement from './pages/dashBoard/pages/addAchievement'
+import AddEducation from './pages/dashBoard/pages/addEducation'
+import AddVoluteering from './pages/dashBoard/pages/addVoluteering'
+import Profile from './pages/dashBoard/pages/about'
+import AddProfile from './pages/dashBoard/pages/addprofile'
 
 const App = () => {
   const router = createBrowserRouter([
@@ -41,12 +44,12 @@ const App = () => {
   element:<Overview/>
 },
 {
-  path : "resume",
-  element:<Resume/>
+  path : "profile",
+  element:<Profile/>
 },
 {
-  path: "resume/add-resume",
-  element: <AddResume/>
+  path: "profile/add-profile",
+  element: <AddProfile/>
   },
 {
   path : "skills",
@@ -66,7 +69,7 @@ const App = () => {
   },
 
 {
-  path : "experiences",
+  path : "experience",
   element:<Experiences/>
 },
 
@@ -80,13 +83,25 @@ const App = () => {
   element: <Achievement/>
 },
 {
+  path: "achievement/add-achievement",
+  element: <AddAchievement/>
+},
+{
   path: "education",
   element: <Education/>
 },
 {
+  path: "education/add-education",
+  element: <AddEducation/>
+},
+{
   path: "volunteering",
   element: <Volunteering/>
-}
+},
+{
+  path: "volunteering/add-voluteering",
+  element: <AddVoluteering/>
+},
   ]
 },
 
