@@ -6,6 +6,7 @@ import LoginPage from './pages/loginPage'
 import Projects from './pages/dashBoard/pages/projects'
 import DashBoardLayout from './pages/dashBoard/layout'
 import Skills from './pages/dashBoard/pages/Skills'
+import Skills from './pages/dashBoard/pages/Skills'
 import Achievement from './pages/dashBoard/pages/achievement'
 import Education from './pages/dashBoard/pages/education'
 import Volunteering from './pages/dashBoard/pages/volunteering'
@@ -27,6 +28,10 @@ const App = () => {
   path:"/",
   element: <LandingPage/>
 },
+// {
+//   path : "navbar",
+//   element:<Na/>
+// },
 {
   path : "signup",
   element:<SignupPage/>
@@ -50,6 +55,8 @@ const App = () => {
 {
   path: "profile/add-profile",
   element: <AddProfile/>
+  path: "profile/add-profile",
+  element: <AddProfile/>
   },
 {
   path : "skills",
@@ -70,6 +77,7 @@ const App = () => {
 
 {
   path : "experience",
+  path : "experience",
   element:<Experiences/>
 },
 
@@ -77,10 +85,27 @@ const App = () => {
   path: "experiences/add-experience",
   element: <AddExperience/>
   },
+  
+   path : "preview",
+  element:<PreviewPage/>
+},
+
+
+
+
+
+    ]
+
+ 
+    
 
 {
   path: "achievement",
   element: <Achievement/>
+},
+{
+  path: "achievement/add-achievement",
+  element: <AddAchievement/>
 },
 {
   path: "achievement/add-achievement",
@@ -95,8 +120,17 @@ const App = () => {
   element: <AddEducation/>
 },
 {
+  path: "education/add-education",
+  element: <AddEducation/>
+},
+{
   path: "volunteering",
   element: <Volunteering/>
+},
+{
+  path: "volunteering/add-voluteering",
+  element: <AddVoluteering/>
+},
 },
 {
   path: "volunteering/add-voluteering",
