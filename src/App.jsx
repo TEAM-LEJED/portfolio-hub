@@ -17,10 +17,10 @@ import AddEducation from './pages/dashBoard/pages/addEducation'
 import AddVoluteering from './pages/dashBoard/pages/addVoluteering'
 import Profile from './pages/dashBoard/pages/about'
 import AddProfile from './pages/dashBoard/pages/addprofile'
-import Home from './pages/dashBoard/home'
 import PreviewPage from './pages/preview'
 import AchievementDashboard from './pages/dashBoard/pages/achievement'
 import LandingPage from './pages/landingPage/landingPage'
+
 
 // import Navbar from './components/navbar'
 

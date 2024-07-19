@@ -17,12 +17,12 @@ const PreviewPage = () => {
         <About/>
         <Experience/>
         <Achievements/>
-        <Contacts/>
         <Education/>
         <Projects/>
         <Resume/>
         <Skills/>
         <Voluteering/>
+        <Contacts/>
 
     </div>
   )

@@ -1,3 +1,4 @@
+
 import { Link, Pin, ScanFace, Store, User } from "lucide-react";
 
 const c = {
@@ -44,8 +45,7 @@ const c = {
         },
     ],
 
-    EXPERIENCECARD:[
-        
+    EXPERIENCECARD:[        
         { 
         ICON:<Pin/>, 
         companyName: "Google",
@@ -54,8 +54,9 @@ const c = {
         responsibility: "Developed a web application for Google.",
         location: "Accra, Ghana",
         startDate:  "2022-01-01",
-        endDate: "2023-12-31" 
+        endDate: "2023-12-31"
         },
+
         { 
         ICON:<Pin/>,      
         companyName: "Google",
@@ -64,9 +65,10 @@ const c = {
         responsibility: "Developed a web application for Google.",
         location: "Accra, Ghana",
         startDate:  "2022-01-01",
-        endDate: "2023-12-31" 
+        endDate: "2023-12-31"
         },
-        { 
+        {
+
         ICON:<Pin/>,          
         companyName: "Google",
         role: "Software Engineer",
@@ -74,8 +76,8 @@ const c = {
         responsibility: "Developed a web application for Google.",
         location: "Accra, Ghana",
         startDate:  "2022-01-01",
-        endDate: "2023-12-31" 
-        },
+        endDate: "2023-12-31"
+
         {  
         ICON:<Pin/>,      
         companyName: "Google",
@@ -84,9 +86,8 @@ const c = {
         responsibility: "Developed a web application for Google.",
         location: "Accra, Ghana",
         startDate:  "2022-01-01",
-        endDate: "2023-12-31" 
+        endDate: "2023-12-31"
         },
-
     ],
 
     PROFILESECTIONS:[
@@ -253,6 +254,4 @@ EDUCATION : [
         
         
 
-
-}
 export default c;

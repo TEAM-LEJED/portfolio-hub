@@ -1,8 +1,13 @@
 import React from 'react'
-
+import c from "./constants";
 const Resume = () => {
   return (
-    <div>Resume </div>
+    <div className='bg-[#12071F]   '>
+    <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> RESUME   </h4>
+
+    
+    </div>
+
   )
 }
 

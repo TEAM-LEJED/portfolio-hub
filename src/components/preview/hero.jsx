@@ -1,7 +1,7 @@
 import React from 'react'
 import BgMotion from './bg-motion'
 import { TypeAnimation } from 'react-type-animation'
-import { googleIcon, LynImg } from '../../assets'
+import { LynImg } from '../../assets'
 import { CircleArrowDown } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -29,11 +29,11 @@ const Hero = () => {
         </div>
         <div className="absolute bottom-8 w-full flex justify-center">
         <Link to="/about">
-        <CircleArrowDown className="animate-bounce text-white size-16"   />
+        <CircleArrowDown className="animate-bounce text-white size-16 "   />
         </Link>
       </div>
         <div className='shadow-white shadow-2xl bg-[#12071F] rounded-full  bg-opacity-50'>
-        <img src={LynImg} alt="" srcset="" />
+        <img  src={LynImg} alt="" srcset=""/>
         </div>
         
       </div>
