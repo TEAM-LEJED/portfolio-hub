@@ -77,7 +77,7 @@ const c = {
         location: "Accra, Ghana",
         startDate:  "2022-01-01",
         endDate: "2023-12-31"
-
+        },
         {  
         ICON:<Pin/>,      
         companyName: "Google",
@@ -252,6 +252,6 @@ EDUCATION : [
   }
 ],
         
-        
+}      
 
 export default c;
