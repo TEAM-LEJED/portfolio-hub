@@ -1,43 +1,10 @@
 import React, { useState } from 'react';
 
 const ProfileForms = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    maritalStatus: '',
-    sex: '',
-    location: '',
-    bio: '',
-    dateOfBirth: '',
-    contact: '',
-    languages: '',
-    email: '',
-    jobTitle: '',
-    specialization: '',
-    cv: null,
-    linkedin: '',
-    github: ''
-  });
 
-  const handleChange = (e) => {
-    if (e.target.type === 'file') {
-      setFormData({ ...formData, [e.target.name]: e.target.files[0] });
-    } else {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
-    }
-  };
-
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log(formData);
-    // Reset form fields after submission (if needed)
-    // setFormData({ ...initialState });
-  };
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-4 sm:grid-cols-3 max-w-4xl mx-auto">
+    <form className="grid grid-cols-1 gap-y-4 sm:grid-cols-3 max-w-4xl mx-auto">
       <div className="sm:col-span-1">
         <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
           Full Name
@@ -46,8 +13,6 @@ const ProfileForms = () => {
           type="text"
           id="fullName"
           name="fullName"
-          value={formData.fullName}
-          onChange={handleChange}
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -59,8 +24,6 @@ const ProfileForms = () => {
         <select
           id="maritalStatus"
           name="maritalStatus"
-          value={formData.maritalStatus}
-          onChange={handleChange}
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         >
@@ -77,8 +40,7 @@ const ProfileForms = () => {
         <select
           id="sex"
           name="sex"
-          value={formData.sex}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         >
@@ -96,8 +58,7 @@ const ProfileForms = () => {
           type="text"
           id="location"
           name="location"
-          value={formData.location}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -109,8 +70,7 @@ const ProfileForms = () => {
         <textarea
           id="bio"
           name="bio"
-          value={formData.bio}
-          onChange={handleChange}
+
           rows="4"
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
@@ -124,8 +84,7 @@ const ProfileForms = () => {
           type="date"
           id="dateOfBirth"
           name="dateOfBirth"
-          value={formData.dateOfBirth}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -138,12 +97,13 @@ const ProfileForms = () => {
           type="tel"
           id="contact"
           name="contact"
-          value={formData.contact}
-          onChange={handleChange}
+          pattern="[0-9]*"
+          inputMode="numeric"
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
       </div>
+
       <div className="sm:col-span-1">
         <label htmlFor="languages" className="block text-sm font-medium text-gray-700">
           Languages
@@ -152,8 +112,7 @@ const ProfileForms = () => {
           type="text"
           id="languages"
           name="languages"
-          value={formData.languages}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -166,8 +125,7 @@ const ProfileForms = () => {
           type="email"
           id="email"
           name="email"
-          value={formData.email}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -180,8 +138,7 @@ const ProfileForms = () => {
           type="text"
           id="jobTitle"
           name="jobTitle"
-          value={formData.jobTitle}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -194,8 +151,7 @@ const ProfileForms = () => {
           type="text"
           id="specialization"
           name="specialization"
-          value={formData.specialization}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -209,7 +165,6 @@ const ProfileForms = () => {
           id="cv"
           name="cv"
           accept=".pdf,.doc,.docx"
-          onChange={handleChange}
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -222,8 +177,7 @@ const ProfileForms = () => {
           type="text"
           id="linkedin"
           name="linkedin"
-          value={formData.linkedin}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
@@ -236,28 +190,25 @@ const ProfileForms = () => {
           type="text"
           id="github"
           name="github"
-          value={formData.github}
-          onChange={handleChange}
+
           className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none sm:text-sm"
           required
         />
       </div>
       <div className="flex items-center justify-between">
-          <button
-            className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-            // onClick={handleSaveDraft}
-          >
-            Save Draft
-          </button>
-          <button
-            className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="button"
-            // onClick={handleSaveAndContinue}
-          >
-            Save and Continue
-          </button>
-        </div>
+        <button
+          className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button"
+        >
+          Save Draft
+        </button>
+        <button
+          className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="button"
+        >
+          Save and Continue
+        </button>
+      </div>
     </form>
   );
 };

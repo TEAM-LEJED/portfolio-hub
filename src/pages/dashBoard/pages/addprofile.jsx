@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import ProfileForms from './allForms/profileForms';
-import ProfileAvatar from './allForms/avatar';
+import ProfileForms from '../../../components/dashBorad/allForms/profileForms';
+import ProfileAvatar from '../../../components/dashBorad/allForms/avatar';
 
 const AddProfile = () => {
      

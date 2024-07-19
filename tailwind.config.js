@@ -1,3 +1,4 @@
+// tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,11 +7,19 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        ash:"#3D5A5E"
-      }
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+      keyframes: {
+        bounceLR: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(20px)' },
+        },
+      },
+      animation: {
+        bounceLR: 'bounceLR 1s infinite',
+      },
     },
   },
   plugins: [],
 }
-

@@ -1,8 +1,11 @@
 import React from 'react'
+import AchievementForm from '../../../components/dashBorad/allForms/achievementForm'
 
 const AddAchievement = () => {
   return (
-    <div>Add Achievement</div>
+    <div>
+      <AchievementForm/>
+    </div>
   )
 }
 

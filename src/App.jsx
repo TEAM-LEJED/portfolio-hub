@@ -1,12 +1,10 @@
 
-import LandingPage from './pages/landingPage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import SignupPage from './pages/signupPage'
 import LoginPage from './pages/loginPage'
 import Projects from './pages/dashBoard/pages/projects'
 import DashBoardLayout from './pages/dashBoard/layout'
 import Skills from './pages/dashBoard/pages/Skills'
-import Achievement from './pages/dashBoard/pages/achievement'
 import Education from './pages/dashBoard/pages/education'
 import Volunteering from './pages/dashBoard/pages/volunteering'
 import Overview from './pages/dashBoard/pages/overview'
@@ -20,6 +18,8 @@ import AddVoluteering from './pages/dashBoard/pages/addVoluteering'
 import Profile from './pages/dashBoard/pages/about'
 import AddProfile from './pages/dashBoard/pages/addprofile'
 import PreviewPage from './pages/preview'
+import AchievementDashboard from './pages/dashBoard/pages/achievement'
+import LandingPage from './pages/landingPage/landingPage'
 
 
 // import Navbar from './components/navbar'
@@ -86,18 +86,13 @@ const App = () => {
   path: "experiences/add-experience",
   element: <AddExperience/>
   },
-
-
-    ]
-
-},
-
+ 
 {
   path: "achievement",
-  element: <Achievement/>
+  element: <AchievementDashboard/>
 },
 {
-  path: "achievement/add-achievement",
+  path: "achievement/add-achievements",
   element: <AddAchievement/>
 },
 {
@@ -116,7 +111,10 @@ const App = () => {
   path: "volunteering/add-voluteering",
   element: <AddVoluteering/>
 },
-  
+]
+
+},
+
 
   ])
   return <RouterProvider router={router}/>

@@ -1,8 +1,11 @@
 import React from 'react'
+import EducationForm from '../../../components/dashBorad/allForms/educationForm'
 
 const AddEducation = () => {
   return (
-    <div>Add Education</div>
+    <div>
+      <EducationForm/>
+    </div>
   )
 }
 
