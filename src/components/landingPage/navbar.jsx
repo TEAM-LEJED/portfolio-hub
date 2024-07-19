@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from "framer-motion";
 import { lejedLogo } from '../../assets';
+import { Canvas } from '@react-three/fiber';
+import { Stars } from '@react-three/drei';
+import { useNavigate } from 'react-router-dom';
+import BgMotion from '../preview/bg-motion';
 
 
 const container = (delay) => ({
@@ -19,10 +23,11 @@ const container = (delay) => ({
 });
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="py-10 bg-gray text-white">
-        <div className="container flex justify-between items-center">
+      <div className=" bg-[#12071F] text-white  border-b-4 border-yellow-600">
+        <div className=" flex justify-between items-center">
           {/* {Logo section} */}
           <div>
             <img src={lejedLogo} alt="Logo" className="w-[80px]" />
@@ -32,19 +37,21 @@ const Navbar = () => {
             <ul className="flex justify-center gap-10">
               <li>
                 <motion.button
+                  onClick={() => navigate("/login")}
                   variants={container(-0.4)}
                   initial="hidden"
                   whileInView="show"
-                 className="text-xl font-semibold text-black/70 hover:text-white duration-300 border border-white/50 rounded-md px-4 py-2 bg-white hover:bg-yellow-400 transition duration-200">
+                  className="text-xl font-semibold text-black/70 hover:text-white duration-300 border border-white/50 rounded-md px-4 py-2 bg-white hover:bg-yellow-400 transition duration-200">
                   Login
                 </motion.button>
               </li>
               <li>
-                <motion.button 
+                <motion.button
+                  onClick={() => navigate("/signup")}
                   variants={container(-0.9)}
                   initial="hidden"
                   whileInView="show"
-                className="text-xl font-semibold text-black/70 hover:text-white duration-300 border border-white/50 rounded-md px-4 py-2 bg-white hover:bg-yellow-400 transition duration-200">
+                  className="text-xl font-semibold text-black/70 hover:text-white duration-300 border border-white/50 rounded-md px-4 py-2 bg-white hover:bg-yellow-400 transition duration-200">
                   Sign Up
                 </motion.button>
               </li>

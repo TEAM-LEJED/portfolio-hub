@@ -3,9 +3,9 @@ import { lejedLogo } from '../../assets';
 
 const Footer = () => {
   return (
-    <div className="bg-darkGray py-14">
+    <div className="bg-[#12071F] py-14">
 
-<div className="container flex flex-col gap-3 justify-center items-center">
+<div className=" flex flex-col gap-3 justify-center items-center">
 <img src={lejedLogo} alt="" className="w-[100px]" />
 
 <p className="text-white">

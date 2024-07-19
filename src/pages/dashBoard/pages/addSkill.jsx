@@ -4,7 +4,7 @@ import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css';
 import { apiAddSkill } from '../../../services/skills';
 import { toast } from 'react-toastify';
-import Loader from '../../../components/preview/loader';
+import { ColorRing } from 'react-loader-spinner';
 
 
 const AddSkill = () => {
@@ -69,7 +69,7 @@ const AddSkill = () => {
                     type="submit"
 
                   >
-                    {isSubmitting ? <Loader /> : "Add Skill"
+                    {isSubmitting ? <ColorRing /> : "Add Skill"
                     }
                     SAVE DRAFT
                   </button>

@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <main className="bg-darkGray text-white">
+    <main className="bg-[#12071F] text-white">
       <div className="container py-24 lg:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* left side section */}

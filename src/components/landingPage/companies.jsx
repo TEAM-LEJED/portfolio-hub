@@ -4,7 +4,7 @@ import { skillsComImg, skillsComLogo } from '../../assets';
 
 const Companies = () => {
   return (
-    <div className="bg-gray">
+    <div className="bg-[#12071F]">
       {/* company logo */}
       <div className="w-full">
         <img src={skillsComImg} alt="SkillsCompany" className="w-full h-30" />

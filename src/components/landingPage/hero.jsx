@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import React from "react";
 import Lottie from "lottie-react";
 import {
-  FaArrowRight,
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
+    FaArrowRight,
+    FaFacebook,
+    FaInstagram,
+    FaLinkedin,
 } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
@@ -13,23 +13,23 @@ import { Dash } from "../../assets";
 import { useNavigate } from "react-router-dom";
 
 const container = (delay) => ({
-  hidden: {
-    opacity: 0,
-    x: 100,
-  },
-  show: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.5,
-      delay: delay,
+    hidden: {
+        opacity: 0,
+        x: 100,
     },
-  },
+    show: {
+        opacity: 1,
+        x: 0,
+        transition: {
+            duration: 0.5,
+            delay: delay,
+        },
+    },
 });
 
 const Hero = () => {
     const navigate = useNavigate();
-    const toRotate = ["Product Designer and Developer, based in Ghana", "Innovative Solutions for Your Projects", "Creating Impactful Designs and Codes"]; // Define your rotating texts here
+    const toRotate = ["Product Designer and Developer, based in Ghana", "Innovative Solutions for Your Projects", "Creating Impactful Designs and Codes"];
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
@@ -40,7 +40,8 @@ const Hero = () => {
         let ticker = setInterval(() => {
             tick();
         }, delta);
-        return () => { clearInterval(ticker) };
+
+        return () => clearInterval(ticker);
     }, [text]);
 
     const tick = () => {
@@ -66,8 +67,8 @@ const Hero = () => {
 
     return (
         <>
-            <main className="bg-gray text-white">
-                <div className="container mx-auto">
+            <main className="bg-[#12071F] text-white border-b border-yellow-600">
+                <div className="container mx-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 min-h-[600px] place-items-center py-20 md:py-0 relative overflow-hidden">
                         {/* Image Section */}
                         <div className="grid col-span-2 relative h-full justify-center items-center">

@@ -58,7 +58,7 @@ export const K = {
     {
       icon:<LogOutIcon/>,
       text: "LogOut",
-      link: "/login"
+      link: "/"
     },
     
   ],
