@@ -1,8 +1,14 @@
 import React from 'react'
-
-const Achievements = () => {
+const Achievements= () => {
   return (
-    <div>Achievement  </div>
+    <div className='bg-[#12071F]   '>
+    <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> ACHIEVEMENTS   </h4>
+
+    <div className=' grid grid-cols-2 p-20 gap-9 '>
+     
+    </div>
+    </div>
+
   )
 }
 

@@ -19,8 +19,8 @@ import AddEducation from './pages/dashBoard/pages/addEducation'
 import AddVoluteering from './pages/dashBoard/pages/addVoluteering'
 import Profile from './pages/dashBoard/pages/about'
 import AddProfile from './pages/dashBoard/pages/addprofile'
-import Home from './pages/dashBoard/home'
 import PreviewPage from './pages/preview'
+
 
 // import Navbar from './components/navbar'
 
@@ -31,10 +31,10 @@ const App = () => {
   path:"/",
   element: <LandingPage/>
 },
-// {
-//   path : "navbar",
-//   element:<Na/>
-// },
+{
+  path : "preview",
+  element:<PreviewPage/>
+},
 {
   path : "signup",
   element:<SignupPage/>

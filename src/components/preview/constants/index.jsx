@@ -1,3 +1,6 @@
+
+import { Pin } from "lucide";
+
 const c = {
     NAVPREVIEW:[
         {
@@ -41,5 +44,50 @@ const c = {
             link:"/volunteering"
         },
     ],
+
+    EXPERIENCECARD:[
+       
+        {
+        ICON:<Pin/>,
+        companyName: "Google",
+        role: "Software Engineer",
+        skills: "Java, C++",
+        responsibility: "Developed a web application for Google.",
+        location: "Accra, Ghana",
+        startDate:  "2022-01-01",
+        endDate: "2023-12-31"
+        },
+        {
+        ICON:<Pin/>,      
+        companyName: "Google",
+        role: "Software Engineer",
+        skills: "Java, C++",
+        responsibility: "Developed a web application for Google.",
+        location: "Accra, Ghana",
+        startDate:  "2022-01-01",
+        endDate: "2023-12-31"
+        },
+        {
+        ICON:<Pin/>,          
+        companyName: "Google",
+        role: "Software Engineer",
+        skills: "Java, C++",
+        responsibility: "Developed a web application for Google.",
+        location: "Accra, Ghana",
+        startDate:  "2022-01-01",
+        endDate: "2023-12-31"
+        },
+        {  
+        ICON:<Pin/>,      
+        companyName: "Google",
+        role: "Software Engineer",
+        skills: "Java, C++",
+        responsibility: "Developed a web application for Google.",
+        location: "Accra, Ghana",
+        startDate:  "2022-01-01",
+        endDate: "2023-12-31"
+        },
+
+    ]
 }
 export default c;
