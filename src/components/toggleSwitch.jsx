@@ -1,17 +1,31 @@
 import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import PageTransition from "./pageTransition";
 
 export default function ToggleSwitch() {
   const [isOn, setIsOn] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Determine the initial state of the switch based on the current pathname
+  useEffect(() => {
+    if (location.pathname === "/signup") {
+      setIsOn(true);
+    } else {
+      setIsOn(false);
+    }
+  }, [location.pathname]);
 
   const toggleSwitch = () => {
     setIsOn(!isOn);
     setTimeout(() => {
-      navigate('/signup');
+      if (isOn) {
+        navigate('/login');
+      } else {
+        navigate('/signup');
+      }
     }, 700); 
   };
 
@@ -26,9 +40,16 @@ export default function ToggleSwitch() {
           className="handle w-10 h-10 bg-[#FDC744] rounded-full" 
           transition={{ type: 'spring', stiffness: 700, damping: 30 }}
         />
-        {!isOn && <span className="text-white mx-auto italic text-[10px] flex flex-col">Don't have an account?
-          <span className="text-[14px] not-italic">SIGN UP</span>
-           </span>}
+        {(!isOn && location.pathname === "/login") && 
+          <span className="text-white mx-auto italic text-[10px] flex flex-col">
+            Don't have an account?
+            <span className="text-[14px] not-italic">SIGN UP</span>
+          </span>}
+        {(isOn && location.pathname === "/signup") && 
+          <span className="text-white mx-auto italic text-[10px] flex flex-col">
+            Already have an account?
+            <span className="text-[14px] not-italic">LOG IN</span>
+          </span>}
       </div>
     </PageTransition>
   );
