@@ -1,5 +1,5 @@
 import React from 'react'
-import ExperienceForm from './allForms/experienceForm'
+import ExperienceForm from '../../../components/dashBorad/allForms/experienceForm'
 
 const AddExperience = () => {
   return (
