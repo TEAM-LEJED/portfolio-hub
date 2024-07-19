@@ -16,4 +16,4 @@ const Skills = () => {
   )
 }
 
-export default skills
+export default Skills
