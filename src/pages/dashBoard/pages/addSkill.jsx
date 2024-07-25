@@ -1,97 +1,100 @@
-import React, { useState } from 'react'
-import { useForm } from 'react-hook-form';
-import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css';
-import { apiAddSkill } from '../../../services/skills';
-import { toast } from 'react-toastify';
-import { ColorRing } from 'react-loader-spinner';
-
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import { apiAddSkill } from "../../../services/skills";
+import { toast } from "react-toastify";
+import { ColorRing } from "react-loader-spinner";
 
 const AddSkill = () => {
-  const { register,
+  const {
+    register,
     handleSubmit,
-    formState: { errors } } = useForm();
+    formState: { errors },
+  } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-
   const onSubmit = async (data) => {
-    console.log(data)
-    setIsSubmitting(true)
+    console.log(data);
+    setIsSubmitting(true);
     try {
       const res = await apiAddSkill({
         skillName: data.name,
         levelOfProficiency: data.skillProficiency,
-      })
-      console.log(res.data)
-      toast.success(res.data.message)
+      });
+      console.log(res.data);
+      toast.success(res.data.message);
     } catch (error) {
-      console.log(error)
-      toast.error("An Error occured")
-    }finally{
-      setIsSubmitting(false)
+      console.log(error);
+      toast.error("An Error occured");
+    } finally {
+      setIsSubmitting(false);
     }
-
-  }
+  };
   return (
     <div>
       <Popup
-        trigger={<button className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"> CLICK TO  ADD SKILLS </button>}
+        trigger={
+          <button className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            {" "}
+            CLICK TO ADD SKILLS{" "}
+          </button>
+        }
         modal
         nested
       >
-        {close => (
+        {(close) => (
           <div className="modal">
             <button className="close" onClick={close}>
               &times;
             </button>
             <div className="header"> ADD SKILLS </div>
             <div className="content">
-              <form onSubmit={handleSubmit(onSubmit)}   >
-                <input type="name"
-                  name='name'
-
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <input
+                  type="name"
+                  name="name"
                   {...register("name", { required: "name is required" })}
-                  placeholder="Skill Name" />
+                  placeholder="Skill Name"
+                />
 
-                <select name="skillProficiency"
-                  {...register("skillProficiency", { required: "skillProficiency is required" })}
+                <select
+                  name="skillProficiency"
+                  {...register("skillProficiency", {
+                    required: "skillProficiency is required",
+                  })}
                 >
-                  <option disabled selected>Skill Proficiency</option>
-                  <option value="Begineer">Beginner</option>
-                  <option value="Intermediate" >Intermediate</option>
-                  <option value="Advanced" >Advanced</option>
-                  <option value="Expert" >Expert</option>
+                  <option disabled selected>
+                    Skill Proficiency
+                  </option>
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                  <option>Expert</option>
                 </select>
                 <div className="actions flex items-center justify-between">
-
                   <button
                     className="button bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="submit"
-
                   >
-                    {isSubmitting ? <ColorRing /> : "SAVE DRAFT "
-                    }
+                    {isSubmitting ? <ColorRing /> : "SAVE DRAFT "}
                   </button>
                   <div className="flex items-center justify-between">
-
                     <button
                       className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                       type="submit"
-
                     >
                       Save and Continue
                     </button>
                   </div>
-
                 </div>
               </form>
             </div>
-
           </div>
         )}
       </Popup>
     </div>
-  )
-}
+  );
+};
 
-export default AddSkill
+export default AddSkill;

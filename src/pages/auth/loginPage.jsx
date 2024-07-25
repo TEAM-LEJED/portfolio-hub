@@ -1,9 +1,9 @@
 import React from 'react';
-import { SignUp, fieldImage, lejedLogo } from '../../../../assets';
-import LoginForm from '../../../../components/loginForm';
-import SocialIcons from '../../../../components/socialIcons';
-import ToggleSwitch from '../../../../components/toggleSwitch';
-import PageTransition from '../../../../components/pageTransition';
+import { fieldImage, SignUp } from '../../assets';
+import LoginForm from '../../components/loginForm';
+import SocialIcons from '../../components/socialIcons';
+import ToggleSwitch from '../../components/toggleSwitch';
+import PageTransition from '../../components/pageTransition';
 import { ArrowBigRight } from 'lucide-react';
 const LoginPage = () => {
   return (

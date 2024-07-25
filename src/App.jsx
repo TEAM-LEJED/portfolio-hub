@@ -1,6 +1,5 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
 import Projects from './pages/dashBoard/pages/projects'
 import DashBoardLayout from './pages/dashBoard/layout'
 import Skills from './pages/dashBoard/pages/Skills'
@@ -19,10 +18,11 @@ import AddProfile from './pages/dashBoard/pages/addprofile'
 import PreviewPage from './pages/preview'
 import AchievementDashboard from './pages/dashBoard/pages/achievement'
 import LandingPage from './pages/landingPage/landingPage'
-import SignupPage from './pages/dashBoard/pages/auth/signupPage'
-import LoginPage from './pages/dashBoard/pages/auth/loginPage'
-import AuthLayout from './pages/dashBoard/pages/auth/authLayout'
+
 import { apiGetUserDetails } from './services/preview'
+import AuthLayout from './pages/auth/authLayout'
+import LoginPage from './pages/auth/loginPage'
+import SignupPage from './pages/auth/signupPage'
 
 // import Navbar from './components/navbar'
 
@@ -34,15 +34,15 @@ const App = () => {
   element: <LandingPage/>
 },
 {
-  element: <AuthLayout />,
+  element: <AuthLayout/>,
   children: [
     {
       path: "login",
-      element: <LoginPage />,
+      element: <LoginPage/>,
     },
     {
       path: "signup",
-      element: <SignupPage />,
+      element: <SignupPage/>,
     },
   ],
 },
