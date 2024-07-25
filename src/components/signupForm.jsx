@@ -8,13 +8,17 @@ import Loader from './preview/loader';
 import { debounce } from 'lodash';
 
 const SignupForm = () => {
-  const navigate = useNavigate()
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [usernameAvailable, setUsernameAvailable] = useState(false);
-  const [usernameNotAvailable, setUsernameNotAvailable] = useState(false)
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const [usernameNotAvailable, setUsernameNotAvailable] = useState(false);
   const [isUsernameLoading, setIsUsernameLoading] = useState(false);
-
+  const navigate = useNavigate();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({ reValidateMode: "onBlur", mode: "all" });
   const checkUserName = async (userName) => {
     setIsUsernameLoading(true);
     try {
@@ -72,17 +76,13 @@ const SignupForm = () => {
     }
 
     try {
-      const res = await apiSignup(payload);
-      
-      toast.success(res.data);
-      setTimeout(() => {
-        navigate('/login');
-      }, 5000);
-
-
+      const res = await apiSignUp(payload);
+      console.log(res.data);
+      toast.success(res.data.message);
+      navigate("/login");
     } catch (error) {
-      toast.error("An error occurred. Please try again.!");
       console.log(error);
+      toast.error("An error occured!");
     } finally {
       setIsSubmitting(false);
     }
@@ -91,12 +91,12 @@ const SignupForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col justify-center items-center mt-2 mb-8">
   <div className="relative mb-4 w-3/4">
-    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="First Name"
       type="text"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
-      placeholder="First Name"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
+      placeholder="First Name "
       {...register("firstName", { required: "First Name required" })}
     />
     {errors.firstName && (
@@ -105,11 +105,11 @@ const SignupForm = () => {
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-" />
     <input
       id="Last Name"
       type="text"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="Last Name"
       {...register("lastName", { required: "Last Name required" })}
     />
@@ -119,22 +119,22 @@ const SignupForm = () => {
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="Other Name"
       type="text"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="Other Name"
       {...register("OtherName")}
     />
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <User className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="username"
       type="text"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="username"
       {...register("userName", {
         required: "username required",
@@ -152,11 +152,11 @@ const SignupForm = () => {
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="email"
       type="email"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="email"
       {...register("email", { required: "email required" })}
     />
@@ -166,25 +166,31 @@ const SignupForm = () => {
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="password"
       type="password"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="Password"
-      {...register("password", { required: "password needed" })}
-    />
+      {...register("password", {
+        required: "Password is required",
+        minLength: {
+          value: 8,
+          message: "Password length must be more than 8 characters",
+        },
+      })}    
+      />
     {errors.password && (
       <p className="text-red-500">{errors.password.message}</p>
     )}
   </div>
   
   <div className="relative mb-4 w-3/4">
-    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#FCC73F]" />
+    <Lock className="absolute left-0 top-1/2 transform -translate-y-1/2 text-[#12071F]" />
     <input
       id="confirmPassword"
       type="password"
-      className="border-b-2 border-[#FCC73F] bg-transparent pl-8 pr-2 w-full transition duration-200"
+      className="border-b-2 border-white bg-transparent px-4 w-3/4 transition duration-200"
       placeholder="confirm password"
       {...register("confirmPassword", { required: "password doesn't match" })}
     />
@@ -195,7 +201,7 @@ const SignupForm = () => {
   
   <button
     type="submit"
-    className="rounded-full w-40 h-10 bg-[#12071F] text-[#FCC73F] uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
+    className="rounded-full w-40 h-10 bg-[#12071F] text-white uppercase font-bold shadow-md hover:border-purple-600 hover:outline-none transition duration-200"
   >
     Sign Up
   </button>

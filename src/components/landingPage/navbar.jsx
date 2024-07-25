@@ -26,7 +26,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className=" bg-[#12071F] text-white  border-b-4 border-yellow-600">
+      <div className=" bg-[#12071F] text-white  border-b-4 border-white">
         <div className=" flex justify-between items-center">
           {/* {Logo section} */}
           <div>

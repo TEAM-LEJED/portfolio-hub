@@ -31,7 +31,7 @@ const Skills = () => {
     }
   }
 
-  const handleDelete = async(_id) => {
+  const handleDelete = async (_id) => {
     try {
       const res = await apiDeleteSkill(_id)
       console.log(res.data)
@@ -41,9 +41,9 @@ const Skills = () => {
     } catch (error) {
       console.log(error)
       toast.error("An error occured")
-      
+
     }
-    
+
   }
   useEffect(() => {
     fetchSkills()
@@ -53,7 +53,7 @@ const Skills = () => {
     <div>
       <PagesLayout headerText="Skills" buttonText="Add New"
         onClick={() => navigate("/dashboard/skills/add-skill")}>
-     
+
       </PagesLayout>
 
 
@@ -72,8 +72,8 @@ const Skills = () => {
                       <div className='flex mt-2'>
                         <button onClick={() => handleDelete(_id)} className='cursor-pointer'>
                           {
-                            isDeleting? <Loader/>: 
-                            <Trash2Icon className='text-red-500 hover:text-red-700' />
+                            isDeleting ? <Loader /> :
+                              <Trash2Icon className='text-red-500 hover:text-red-700' />
 
                           }
                         </button>

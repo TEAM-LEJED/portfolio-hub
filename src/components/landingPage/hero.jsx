@@ -67,7 +67,7 @@ const Hero = () => {
 
     return (
         <>
-            <main className="bg-[#12071F] text-white border-b border-yellow-600">
+            <main className="bg-[#12071F] text-white border-b border-white">
                 <div className="container mx-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 min-h-[600px] place-items-center py-20 md:py-0 relative overflow-hidden">
                         {/* Image Section */}
@@ -79,7 +79,7 @@ const Hero = () => {
                                     whileInView="show"
                                     className="text-4xl md:text-6xl font-bold relative z-20"
                                 >
-                                    Portfolio <br /> Hub GH.
+                                    Lejed <br /> Hub GH.
                                 </motion.h1>
                                 <motion.div
                                     variants={container(0.6)}
@@ -148,7 +148,7 @@ const Hero = () => {
                                 initial="hidden"
                                 whileInView={"show"}
                                 className="text-sm opacity-50 tracking-widest font-serif translate-y-3">
-                                Welcome to Portfolio Hub GH.!🌟
+                                Welcome to Lejed Portfolio GH.!🌟
                             </motion.p>
                             <motion.h1
                                 variants={container(0.6)}

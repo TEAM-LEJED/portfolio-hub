@@ -1,7 +1,5 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import SignupPage from './pages/signupPage'
-import LoginPage from './pages/loginPage'
 import Projects from './pages/dashBoard/pages/projects'
 import DashBoardLayout from './pages/dashBoard/layout'
 import Skills from './pages/dashBoard/pages/Skills'
@@ -21,6 +19,10 @@ import PreviewPage from './pages/preview'
 import AchievementDashboard from './pages/dashBoard/pages/achievement'
 import LandingPage from './pages/landingPage/landingPage'
 
+import { apiGetUserDetails } from './services/preview'
+import AuthLayout from './pages/auth/authLayout'
+import LoginPage from './pages/auth/loginPage'
+import SignupPage from './pages/auth/signupPage'
 
 // import Navbar from './components/navbar'
 
@@ -32,17 +34,30 @@ const App = () => {
   element: <LandingPage/>
 },
 {
+  element: <AuthLayout/>,
+  children: [
+    {
+      path: "login",
+      element: <LoginPage/>,
+    },
+    {
+      path: "signup",
+      element: <SignupPage/>,
+    },
+  ],
+},
+{
   path : "preview",
   element:<PreviewPage/>
 },
-{
-  path : "signup",
-  element:<SignupPage/>
-},
-{
-  path : "login",
-  element:<LoginPage/>
-},
+// {
+//   path : "signup",
+//   element:<SignupPage/>
+// },
+// {
+//   path : "login",
+//   element:<LoginPage/>
+// },
 {
   path : "dashboard",
   element:<DashBoardLayout/>,
@@ -113,6 +128,21 @@ const App = () => {
 },
 ]
 
+},
+{
+  path: "preview/:username",
+  element: <PreviewPage />,
+  loader: async ({ params }) => {
+    const username = params.username;
+    try {
+      const response = await apiGetUserDetails(username);
+      const userProfileData = response?.data.user;
+      return userProfileData;
+    } catch (error) {
+      toast.error("An error occured");
+      return null;
+    }
+  },
 },
 
 

@@ -9,13 +9,18 @@ import Resume from '../../components/preview/resume'
 import Skills from '../../components/preview/skills'
 import Voluteering from '../../components/preview/voluteering'
 import Hero from '../../components/preview/hero'
+import { useLoaderData } from 'react-router-dom'
 
 const PreviewPage = () => {
+  const data = useLoaderData()
+  console.log(data)
   return (
     <div>
-        <Hero/>
-        <About/>
-        <Experience/>
+        <Hero firstName={data.firstName} lastName={data.lastName} />
+        <About 
+        // about={data.userProfile.bio}
+         />
+        <Experience experiences={data.experience}/>
         <Achievements/>
         <Education/>
         <Projects/>

@@ -1,13 +1,13 @@
 import React from 'react'
 import c from "./constants";
-const Experience = () => {
+const Experience = ({experiences}) => {
   return (
-    <div className='bg-[#12071F]   '>
-    <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> WORK EXPERIENCE   </h4>
+    <div >
+    {/* <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> WORK EXPERIENCE   </h4>
 
     <div className=' grid grid-cols-2 p-20 gap-9 '>
       {
-        c.EXPERIENCECARD.map((item, index) => (
+        experiences.map((item, index) => (
           <div 
           key={index}>
             <h3 className='text-white'>{item.companyName}</h3>
@@ -21,7 +21,7 @@ const Experience = () => {
           </div>
         ))
       }
-    </div>
+    </div> */}
     </div>
 
   )
