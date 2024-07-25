@@ -8,6 +8,11 @@ import{
    HeartHandshake, 
    UserSearch,
    LogOutIcon,
+   BookText,
+   FolderKanban,
+   Award,
+   BookA,
+   Badge,
   } from "lucide-react";
 export const K = {
   NAVLINKS: [
@@ -55,33 +60,43 @@ export const K = {
       link: "/dashboard/volunteering"
     },
 
-    {
-      icon:<LogOutIcon/>,
-      text: "LogOut",
-      link: "/"
-    },
+    // {
+    //   icon:<LogOutIcon/>,
+    //   text: "LogOut",
+    //   link: "/"
+    // },
     
   ],
   OVERVIEW: [
     {
-      icons: <BriefcaseBusiness />,
+      id: "skills",
+      icon: <BookText />,
       text: "Skills",
-      total: 40,
     },
     {
-      icons: <FileCheck2 />,
+      id: "projects",
+      icon: <FolderKanban />,
       text: "Projects",
-      total: 10,
     },
     {
-      icons: <UserSearch />,
+      id: "experiences",
+      icon: <BriefcaseBusiness />,
       text: "Experiences",
-      total: 9,
     },
     {
-      icons: <Trophy />,
-      text: "Achievement",
-      total: 10,
+      id: "achievements",
+      icon: <Award />,
+      text: "Achievements",
+    },
+    {
+      id: "education",
+      icon: <BookA />,
+      text: "Education",
+    },
+    {
+      id: "volunteering",
+      icon: <Badge />,
+      text: "Volunteering",
     },
   ],
   SKILLS: [

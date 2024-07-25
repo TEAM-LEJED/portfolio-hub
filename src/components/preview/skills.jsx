@@ -1,7 +1,7 @@
 import React from 'react'
 const Skills = () => {
   return (
-    <div className='bg-[#12071F]   '>
+    <div>
     <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> SKILLS   </h4>
 <div className='text-white grid grid-cols-2 p-20 gap-9'>
   <h3>HTML</h3>

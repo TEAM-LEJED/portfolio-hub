@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="w-full h-screen relative bg-[#12071F]" >
       <BgMotion />
-      <div  className='flex items-center justify-center absolute top-0 left-0 w-full h-full   '>
+      <div  className='flex items-center justify-center absolute top-0 left-0 w-full h-full '>
         <div className='text-[#FCC73F] pr-12  font-bold w-1/2' >
           <TypeAnimation
             preRenderFirstString={true}

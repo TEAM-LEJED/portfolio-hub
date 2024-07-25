@@ -7,6 +7,8 @@ import { apiGetExperiences } from "../../../services/experience";
 import { apiGetProjects } from "../../../services/projects";
 import { apiGetSkills } from "../../../services/skills";
 import { apiGetVoluteering } from "../../../services/voluteering";
+import CountUp from "react-countup";
+
 import PageLoader from "../../../components/dashBorad/pageLoader";
 
 
@@ -83,8 +85,14 @@ const Overview = () => {
                 <span className="text-amber-400">{icons}</span>
                 <span className="text-lg text-white font-semibold">{text}</span>
               </div>
-              <span className="text-2xl text-white font-semibold">{total}</span>
+              {/* <span className="text-2xl text-white font-semibold">{total}</span> */}
+              {/* <CountUp
+                  className="text-2xl font-semibold"
+                  start={0}
+                  end={data[id]}
+                /> */}
             </div>
+
           ))}
         </div>
       </div>

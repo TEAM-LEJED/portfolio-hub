@@ -2,8 +2,8 @@ import React from 'react'
 import c from "./constants";
 const Experience = () => {
   return (
-    <div className='bg-[#12071F]   '>
-    <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> WORK EXPERIENCE   </h4>
+    <div >
+    {/* <h4 className='text-[#FCC73F]  text-4xl font-bold p-10 '> WORK EXPERIENCE   </h4>
 
     <div className=' grid grid-cols-2 p-20 gap-9 '>
       {
@@ -21,7 +21,7 @@ const Experience = () => {
           </div>
         ))
       }
-    </div>
+    </div> */}
     </div>
 
   )

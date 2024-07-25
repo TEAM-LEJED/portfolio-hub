@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const About = () => {
   return (
-    <div className= " flex   h- relative justify-between p-20 bg-[#12071F] text-white" >
+    <div >
       <h2 className='flex flex-row text-x3l p-9 tracking-wider' >
         <span  className='p-10 '>
           I am a Full Stack Developer. I studied computer science  web Design at the Elizabeth University.
@@ -24,7 +24,7 @@ const About = () => {
         </Link>
         </span>
       
-      </h2>
+      </h2> 
       
 
 

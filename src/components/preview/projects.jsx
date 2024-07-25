@@ -1,11 +1,11 @@
 import React from 'react'
 const Projects= () => {
   return (
-    <div className='bg-[#12071F]   '>
+    <div >
     <h4 className='text-[#FCC73F]  text-4xl font-bold p-10'> PROJECTS   </h4>
 
 <div className='text-white grid grid-cols-2 p-20 gap-9'>
-  <span> 1. E-COMERCE WEBSITE
+   <span> 1. E-COMERCE WEBSITE
   <h1 className='m-4'>Developed a responsive e-commerce website using React,
      allowing users to browse products, add them to cart, 
      and complete purchases securely.</h1>
@@ -21,7 +21,7 @@ const Projects= () => {
         Developed an online Bridal shop with HTML and CSS.
       </h4>
      </span>
-</div>
+</div> 
     
     </div>
 

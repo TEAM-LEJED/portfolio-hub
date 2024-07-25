@@ -69,9 +69,8 @@ const AddSkill = () => {
                     type="submit"
 
                   >
-                    {isSubmitting ? <ColorRing /> : "Add Skill"
+                    {isSubmitting ? <ColorRing /> : "SAVE DRAFT "
                     }
-                    SAVE DRAFT
                   </button>
                   <div className="flex items-center justify-between">
 
