@@ -10,9 +10,12 @@ import { apiGetVoluteering } from "../../../services/voluteering";
 import CountUp from "react-countup";
 
 import PageLoader from "../../../components/dashBorad/pageLoader";
+import { useNavigate } from "react-router-dom";
 
 
 const Overview = () => {
+  const navigate = useNavigate();
+
 
   const [data, setData] = useState({
     skills: 0,
@@ -61,19 +64,19 @@ const Overview = () => {
 
     } catch (error) {
       console.log(error)
-    }finally{
+    } finally {
       setIsLoading(false)
     }
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     getData()
-  },[])
+  }, [])
 
   return (
-  <>
-    {isLoading ? 
-        <PageLoader/>:
+    <>
+      {isLoading ?
+        <PageLoader /> :
         <div className="p-10">
         <div className="grid grid-cols-3 gap-10">
           {K.OVERVIEW.map(({ icons, text, total }, index) => (
