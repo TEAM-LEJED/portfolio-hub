@@ -19,8 +19,8 @@ const AddSkill = () => {
     setIsSubmitting(true);
     try {
       const res = await apiAddSkill({
-        skillName: data.name,
-        levelOfProficiency: data.skillProficiency,
+        skillName: data.skillName,
+        levelOfProficiency: data.levelOfProficiency,
       });
       console.log(res.data);
       toast.success(res.data.message);
@@ -48,22 +48,26 @@ const AddSkill = () => {
             <button className="close" onClick={close}>
               &times;
             </button>
-            <div className="header"> ADD SKILLS </div>
+            <div className="header"> ADD SKILLS</div>
             <div className="content">
               <form onSubmit={handleSubmit(onSubmit)}>
                 <input
                   type="name"
-                  name="name"
-                  {...register("name", { required: "name is required" })}
+                  {...register("skillName", { required: "name is required" })}
                   placeholder="Skill Name"
                 />
+                {errors.skillName && <span>{errors.skillName.message}</span>}
 
                 <select
-                  name="skillProficiency"
-                  {...register("skillProficiency", {
-                    required: "skillProficiency is required",
+                  name="levelOfProficiency	"
+                  {...register("levelOfProficiency", {
+                    required: "skill Proficiency is required",
                   })}
                 >
+                  {errors.levelOfProficiency && (
+                    <span>{errors.levelOfProficiency.message}</span>
+                  )}
+
                   <option disabled selected>
                     Skill Proficiency
                   </option>
@@ -84,7 +88,7 @@ const AddSkill = () => {
                       className="bg-[#12071F] hover:bg-amber-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                       type="submit"
                     >
-                      Save and Continue
+                      {isSubmitting ? <ColorRing /> : "SAVE AND CONTINUE "}
                     </button>
                   </div>
                 </div>

@@ -4,7 +4,6 @@ import { lejedLogo } from '../../assets';
 import { Canvas } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import { useNavigate } from 'react-router-dom';
-import BgMotion from '../preview/bg-motion';
 
 
 const container = (delay) => ({

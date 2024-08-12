@@ -1,36 +1,43 @@
-import React from 'react'
-import About from '../../components/preview/about'
-import Achievements from '../../components/preview/achievements'
-import Contacts from '../../components/preview/contacts'
-import Education from '../../components/preview/education'
-import Experience from '../../components/preview/experience'
-import Projects from '../../components/preview/projects'
-import Resume from '../../components/preview/resume'
-import Skills from '../../components/preview/skills'
-import Voluteering from '../../components/preview/voluteering'
-import Hero from '../../components/preview/hero'
-import { useLoaderData } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { useLoaderData } from "react-router-dom";
+import Hero from "./hero/hero";
+import About from "./about/about";
+import Experience from "./experience/experience";
+import Achievement from "./Achievements/achievement";
+import Education from "./Education/education";
+import Projects from "./projects/projects";
+import Resume from "./resume/resume";
+import Skills from "./skills/skills";
+import Volunteering from "./volunteering/volunteering"; // correct spelling
+import Loader from "../../components/preview/loader";
 
 const PreviewPage = () => {
-  const data = useLoaderData()
-  console.log(data)
+  const [isLoading, setIsLoading] = useState(true); // Loading state
+  const data = useLoaderData();
+
+  useEffect(() => {
+    if (data) {
+      setIsLoading(false); // Set loading to false once data is loaded
+    }
+  }, [data]);
+
+  if (isLoading) {
+    return <Loader />; // Show loader while loading
+  }
+
   return (
     <div>
-        <Hero firstName={data.firstName} lastName={data.lastName} />
-        <About 
-        // about={data.userProfile.bio}
-         />
-        <Experience experiences={data.experience}/>
-        <Achievements/>
-        <Education/>
-        <Projects/>
-        <Resume/>
-        <Skills/>
-        <Voluteering/>
-        <Contacts/>
-
+      <Hero  firstName={data.firstName} lastName={data.lastName} about={data.userProfile.bio}/>
+      <About /* about={data.userProfile.bio} */ />
+      <Experience /* experiences={data.experience} */ />
+      {/* <Achievement /* achievements={data.achievements} */ /> */}
+      <Education /* education={data.education} */ />
+      <Projects /* projects={data.projects} */ />
+      <Resume /* resume={data.userProfile.resume} */ />
+      {/* <Skills /* skills={data.skills} */ /> */}
+      {/* <Volunteering /* volunteering={data.volunteering} */ /> */}
     </div>
-  )
-}
+  );
+};
 
-export default PreviewPage
+export default PreviewPage;

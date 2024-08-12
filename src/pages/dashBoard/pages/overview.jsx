@@ -5,7 +5,7 @@ import { apiGetEducation } from "../../../services/education";
 import { apiGetExperiences } from "../../../services/experience";
 import { apiGetProjects } from "../../../services/projects";
 import { apiGetSkills } from "../../../services/skills";
-import { apiGetVoluteering } from "../../../services/voluteering";
+import { apiGetVolunteering } from "../../../services/volunteering";
 import CountUp from "react-countup";
 import PageLoader from "../../../components/dashBorad/pageLoader";
 import { useNavigate, useOutletContext } from "react-router-dom";
@@ -17,12 +17,11 @@ const Overview = () => {
     projects: 0,
     achievements: 0,
     education: 0,
-    voluteering: 0,
+    volunteering: 0,
     experiences: 0,
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [profile] = useOutletContext();
-  console.log(profile);
+  const [user] = useOutletContext();
 
   const getData = async () => {
     setIsLoading(true);
@@ -38,7 +37,7 @@ const Overview = () => {
         apiGetSkills(),
         apiGetachievements(),
         apiGetProjects(),
-        apiGetVoluteering(),
+        apiGetVolunteering(),
         apiGetEducation(),
         apiGetExperiences(),
       ]);
@@ -49,7 +48,7 @@ const Overview = () => {
         projects: totalProjects.data.Projects.length,
         achievements: totalAchievements.data.Achievements.length,
         education: totalEducation.data.education.length,
-        voluteering: totalVoluteering.data.Volunteerings.length,
+        volunteering: totalVoluteering.data.Volunteerings.length,
         experiences: totalExperience.data.Experience.length,
       };
       console.log(newData);
@@ -74,9 +73,7 @@ const Overview = () => {
         <div className="p-10 flex flex-col gap-y-10 ">
           <button
             className="ml-auto px-3 py-2 bg-[#12071F] rounded-md text-white font-semibold"
-            onClick={() =>
-              navigate(`/preview/${profile ? profile.userName : "gitAma"}`)
-            }
+            onClick={() => navigate(`/preview/${user?.userName}`)}
           >
             View Preview
           </button>
