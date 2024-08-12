@@ -76,7 +76,7 @@ const SignupForm = () => {
     }
 
     try {
-      const res = await apiSignUp(payload);
+      const res = await apiSignup(payload);
       console.log(res.data);
       toast.success(res.data.message);
       navigate("/login");
